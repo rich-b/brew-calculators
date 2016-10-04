@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 import TabNavigator from 'react-native-tab-navigator';
 import GallonToLiter from './Components/GallonToLiter';
 import WaterCalculator from './Components/WaterCalculator';
+import ABV from './Components/ABV';
 import {
   AppRegistry,
   StyleSheet,
@@ -45,6 +46,12 @@ class Project extends Component {
             badgeText="Water"
             onPress={() => this.setState({ selectedTab: 'water' })}>
             <WaterCalculator />
+          </TabNavigator.Item>
+          <TabNavigator.Item
+            selected={this.state.selectedTab === 'abv'}
+            badgeText="ABV"
+            onPress={() => this.setState({ selectedTab: 'abv' })}>
+            <ABV />
           </TabNavigator.Item>
         </TabNavigator>
         
