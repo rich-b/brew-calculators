@@ -77,103 +77,144 @@ class WaterCalculator extends Component {
           Mash and Sparge Water Calculator
         </Text>
         
-        <View style={styles.form}>
-          <View style={styles.formRow}>
+
+        
+        
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
             <Text>Batch Size (gal)</Text>
+          </View>
+          <View style={styles.waterCol3}>
             <TextInput style={styles.entry} editable = {true} value={batchSize}
               onChangeText={(batchSize) => this.updateCalculations({batchSize: parseFloat(batchSize)})}
             />
           </View>
-          
-          <View style={styles.formRow}>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
             <Text>Grain Bill (lbs)</Text>
+          </View>
+          <View style={styles.waterCol3}>
             <TextInput style={styles.entry} editable = {true} value={grainBill}
               onChangeText={(grainBill) => this.updateCalculations({grainBill: parseFloat(grainBill)})}
             />
           </View>
-          
-          <View style={styles.formRow}>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
             <Text>Boil Time (hrs)</Text>
+          </View>
+          <View style={styles.waterCol3}>
             <TextInput style={styles.entry} editable = {true} value={boilTime}
               onChangeText={(boilTime) => this.updateCalculations({boilTime: parseFloat(boilTime)})}
             />
           </View>
-          
-          <View style={styles.formRow}>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
             <Text>Trub Loss (gal)</Text>
+          </View>
+          <View style={styles.waterCol3}>
             <TextInput style={styles.entry} editable = {true} value={trubLoss}
               onChangeText={(trubLoss) => this.updateCalculations({trubLoss: parseFloat(trubLoss)})}
             />
           </View>
-          
-          <View style={styles.formRow}>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
             <Text>Equipment Loss (gal)</Text>
+          </View>
+          <View style={styles.waterCol3}>
             <TextInput style={styles.entry} editable = {true} value={equipLoss}
               onChangeText={(equipLoss) => this.updateCalculations({equipLoss: parseFloat(equipLoss)})}
             />
           </View>
-          
-          <View style={styles.formRow}>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
             <Text>Mash Thickness (qts/lbs)</Text>
+          </View>
+          <View style={styles.waterCol3}>
             <TextInput style={styles.entry} editable = {true} value={mashThickness}
               onChangeText={(mashThickness) => this.updateCalculations({mashThickness: parseFloat(mashThickness)})}
             />
           </View>
-          
-          <View style={styles.formRow}>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
             <Text>Grain Temperature (deg. F)</Text>
+          </View>
+          <View style={styles.waterCol3}>
             <TextInput style={styles.entry} editable = {true} value={grainTemp}
               onChangeText={(grainTemp) => this.updateCalculations({grainTemp: parseFloat(grainTemp)})}
             />
           </View>
-          
-          <View style={styles.formRow}>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
             <Text>Target Temperature (deg. F)</Text>
+          </View>
+          <View style={styles.waterCol3}>
             <TextInput style={styles.entry} editable = {true} value={targetTemp}
               onChangeText={(targetTemp) => this.updateCalculations({targetTemp: parseFloat(targetTemp)})}
             />
           </View>
-          
-          
-          
-          <View style={styles.formRow}>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
             <Text>% boiloff per hour</Text>
+          </View>
+          <View style={styles.waterCol3}>
             <TextInput style={styles.entry} editable = {true} value={boiloffPercent}
               onChangeText={(boiloffPercent) => this.updateCalculations({boiloffPercent: parseFloat(boiloffPercent)})}
             />
           </View>
-          
-          
-          
-          
-          <Text>Results</Text>
-          
-          <View style={styles.formRow}>
-            <Text>Total Water Needed (gal)</Text>
-            <Text>{this.state.totalWater.toFixed(2)}</Text>
-          </View>
-          <View style={styles.formRow}>
-            <Text>Mash Water Needed (gal)</Text>
-            <Text>{this.state.mashWater.toFixed(2)}</Text>
-          </View>
-          <View style={styles.formRow}>
-            <Text>Sparge Water Needed (gal)</Text>
-            <Text>{this.state.spargeWater.toFixed(2)}</Text>
-          </View>
-          <View style={styles.formRow}>
-            <Text>Strike Temperature (F)</Text>
-            <Text>{this.state.strikeTemp.toFixed(2)}</Text>
-          </View>
-          <View style={styles.formRow}>
-            <Text>Preboil wort produced(gal)</Text>
-            <Text>{this.state.preboilWater.toFixed(2)}</Text>
-          </View>
-          
-          
         </View>
         
+        <View style={styles.resultsLabelView}>
+          <Text style={styles.resultsLabel}>Results</Text>
+        </View>
         
-        
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
+            <Text>Total Water Needed (gal)</Text>
+          </View>
+          <View style={styles.waterCol3}>
+            <Text>{this.state.totalWater.toFixed(2)}</Text>
+          </View>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
+            <Text>Mash Water Needed (gal)</Text>
+          </View>
+          <View style={styles.waterCol3}>
+            <Text>{this.state.mashWater.toFixed(2)}</Text>
+          </View>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
+            <Text>Sparge Water Needed (gal)</Text>
+          </View>
+          <View style={styles.waterCol3}>
+            <Text>{this.state.spargeWater.toFixed(2)}</Text>
+          </View>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
+            <Text>Strike Temperature (F)</Text>
+          </View>
+          <View style={styles.waterCol3}>
+            <Text>{this.state.strikeTemp.toFixed(2)}</Text>
+          </View>
+        </View>
+        <View style={styles.waterFormRow}>
+          <View style={styles.waterCol1}>
+            <Text>Preboil wort produced(gal)</Text>
+          </View>
+          <View style={styles.waterCol3}>
+            <Text>{this.state.preboilWater.toFixed(2)}</Text>
+          </View>
+        </View>
         
 
       </View>
@@ -183,10 +224,7 @@ class WaterCalculator extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#EEEEEE',
   },
   welcome: {
     marginTop: 50,
@@ -194,12 +232,30 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
   },
-  formRow: {
-    flexDirection: 'row'
+  resultsLabelView: {
+    marginTop: 20,
+    alignItems: 'center',
+    backgroundColor: 'cornsilk',
+  },
+  resultsLabel: {
+    color: 'darkgreen'
+  },
+  waterFormRow: {
+    flexDirection: 'row',
+    flex: 1,
+    alignItems: 'center'
+  },
+  waterCol1: {
+    alignItems: 'flex-end',
+    flex: 3,
+    marginRight: 20
+  },
+  waterCol3: {
+    flex: 2
   },
   entry: {
     height: 30,
-    width: 45,
+    width: 80,
     borderColor: 'gray',
     borderWidth: 1,
     textAlign: 'left',

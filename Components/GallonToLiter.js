@@ -18,7 +18,7 @@ class GallonToLiter extends Component {
   
   gToL = (gallon) => {
     this.setState({
-      liter: gallon / 0.26417
+      liter: (gallon / 0.26417).toFixed(2)
     });
   };
 
