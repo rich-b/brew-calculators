@@ -36,28 +36,30 @@ class ABV extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
+        <Text style={styles.directions}>
           ABV Calculator
         </Text>
         
-        <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1, textAlign: 'center'}}
-          editable = {true}
-          onChangeText={this.setOG}
-        />
-        <Text>OG</Text>
-        
-        <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1, textAlign: 'center'}}
-          editable = {true}
-          onChangeText={this.setFG}
-        />
-        <Text>FG</Text>
-        
-        <Text>
-          ABV => 
-          {this.state.abv}
-        </Text>
+        <View>
+          <TextInput
+            style={styles.input}
+            editable = {true}
+            onChangeText={this.setOG}
+          />
+          <Text>OG</Text>
+
+          <TextInput
+            style={styles.input}
+            editable = {true}
+            onChangeText={this.setFG}
+          />
+          <Text>FG</Text>
+
+          <Text style={styles.abv}>
+            ABV => 
+            {this.state.abv}
+          </Text>
+        </View>
         
       </View>
     );
@@ -66,17 +68,26 @@ class ABV extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    marginTop: 50,
+  directions: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    marginTop: 50
   },
+  input: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    textAlign: 'center'
+  },
+  abv: {
+    marginTop: 20,
+    fontSize: 20,
+    color: 'darkslateblue'
+  }
 });
 
 AppRegistry.registerComponent('ABV', () => ABV);

@@ -1,12 +1,9 @@
 
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
  * @flow
  */
 
 import React, { Component } from 'react';
-import TabNavigator from 'react-native-tab-navigator';
 import GallonToLiter from './Components/GallonToLiter';
 import WaterCalculator from './Components/WaterCalculator';
 import ABV from './Components/ABV';
@@ -15,47 +12,58 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  TabBarIOS
 } from 'react-native';
 
 class Project extends Component {
   
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      selectedTab: 'gallontoliter'
+    };
   }
 
   render() {
+    const gallonImage = require('image!gallon')
+    const waterImage = require('image!water')
+    const alcoholImage = require('image!alcohol')
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to The Super Awesome BrewDay Calculator!
+          Brew Day Helper
         </Text>
         
-
-        <TabNavigator style={styles.tabs}>
-          <TabNavigator.Item
+        <TabBarIOS
+          style={styles.tabs}
+          itemPositioning="fill"
+          tintColor="white"
+          barTintColor="darkslateblue">
+          <TabBarIOS.Item
             selected={this.state.selectedTab === 'gallontoliter'}
-            renderIcon={() => <Image source={{uri: 'http://image.flaticon.com/icons/svg/168/168557.svg'}} />}
-            badgeText="GallonToLiter"
+            title="Gallon To Liter"
+            icon={{uri: gallonImage.path, scale: 5}}
             onPress={() => this.setState({ selectedTab: 'gallontoliter' })}>
             <GallonToLiter />
-          </TabNavigator.Item>
-          <TabNavigator.Item
+          </TabBarIOS.Item>
+          <TabBarIOS.Item
             selected={this.state.selectedTab === 'water'}
-            badgeText="Water"
-            onPress={() => this.setState({ selectedTab: 'water' })}>
+            title="Mash Water"
+            icon={{uri: waterImage.path, scale: 8}}
+            onPress={() => this.setState({ selectedTab: 'water' })}
+            >
             <WaterCalculator />
-          </TabNavigator.Item>
-          <TabNavigator.Item
+          </TabBarIOS.Item>
+          <TabBarIOS.Item
             selected={this.state.selectedTab === 'abv'}
-            badgeText="ABV"
+            title="ABV"
+            icon={{uri: alcoholImage.path, scale: 4}}
             onPress={() => this.setState({ selectedTab: 'abv' })}>
             <ABV />
-          </TabNavigator.Item>
-        </TabNavigator>
-        
-
+          </TabBarIOS.Item>
+        </TabBarIOS>
       </View>
     );
   }
@@ -66,7 +74,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
     marginTop: 50,
@@ -75,7 +82,6 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   tabs: {
-    marginBottom: 25,
     alignSelf: 'stretch',
   },
 });

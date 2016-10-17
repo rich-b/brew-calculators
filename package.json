@@ -9,8 +9,7 @@
     "deco-ride-share-demo": "^1.1.0",
     "react": "^15.1.0",
     "react-native": "^0.27.2",
-    "react-native-scrollable-tab-view": "^0.6.0",
-    "react-native-tab-navigator": "^0.3.3"
+    "react-native-scrollable-tab-view": "^0.6.0"
   },
   "description": "BrewDay Calculators",
   "main": "index.ios.js",

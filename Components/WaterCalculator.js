@@ -72,13 +72,10 @@ class WaterCalculator extends Component {
     const boiloffPercent = this.getDecimal(this.state.boiloffPercent);
     
     return (
-      <View style={styles.container}>
+      <View>
         <Text style={styles.welcome}>
           Mash and Sparge Water Calculator
         </Text>
-        
-
-        
         
         <View style={styles.waterFormRow}>
           <View style={styles.waterCol1}>
@@ -180,7 +177,7 @@ class WaterCalculator extends Component {
             <Text>Total Water Needed (gal)</Text>
           </View>
           <View style={styles.waterCol3}>
-            <Text>{this.state.totalWater.toFixed(2)}</Text>
+            <Text style={styles.resultValue}>{this.state.totalWater.toFixed(2)}</Text>
           </View>
         </View>
         <View style={styles.waterFormRow}>
@@ -188,7 +185,7 @@ class WaterCalculator extends Component {
             <Text>Mash Water Needed (gal)</Text>
           </View>
           <View style={styles.waterCol3}>
-            <Text>{this.state.mashWater.toFixed(2)}</Text>
+            <Text style={styles.resultValue}>{this.state.mashWater.toFixed(2)}</Text>
           </View>
         </View>
         <View style={styles.waterFormRow}>
@@ -196,7 +193,7 @@ class WaterCalculator extends Component {
             <Text>Sparge Water Needed (gal)</Text>
           </View>
           <View style={styles.waterCol3}>
-            <Text>{this.state.spargeWater.toFixed(2)}</Text>
+            <Text style={styles.resultValue}>{this.state.spargeWater.toFixed(2)}</Text>
           </View>
         </View>
         <View style={styles.waterFormRow}>
@@ -204,7 +201,7 @@ class WaterCalculator extends Component {
             <Text>Strike Temperature (F)</Text>
           </View>
           <View style={styles.waterCol3}>
-            <Text>{this.state.strikeTemp.toFixed(2)}</Text>
+            <Text style={styles.resultValue}>{this.state.strikeTemp.toFixed(2)}</Text>
           </View>
         </View>
         <View style={styles.waterFormRow}>
@@ -212,7 +209,7 @@ class WaterCalculator extends Component {
             <Text>Preboil wort produced(gal)</Text>
           </View>
           <View style={styles.waterCol3}>
-            <Text>{this.state.preboilWater.toFixed(2)}</Text>
+            <Text style={styles.resultValue}>{this.state.preboilWater.toFixed(2)}</Text>
           </View>
         </View>
         
@@ -223,9 +220,6 @@ class WaterCalculator extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#EEEEEE',
-  },
   welcome: {
     marginTop: 50,
     fontSize: 20,
@@ -235,10 +229,13 @@ const styles = StyleSheet.create({
   resultsLabelView: {
     marginTop: 20,
     alignItems: 'center',
-    backgroundColor: 'cornsilk',
+    backgroundColor: 'darkslateblue',
   },
   resultsLabel: {
-    color: 'darkgreen'
+    color: 'white'
+  },
+  resultValue: {
+    color: 'darkslateblue'
   },
   waterFormRow: {
     flexDirection: 'row',

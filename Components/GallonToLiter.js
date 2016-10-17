@@ -13,7 +13,9 @@ class GallonToLiter extends Component {
   
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      liter: 0
+    };
   }
   
   gToL = (gallon) => {
@@ -25,23 +27,21 @@ class GallonToLiter extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
+        <Text style={styles.directions}>
           Enter Gallon Value to Convert to Liter
         </Text>
         
-        <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1, textAlign: 'center'}}
-          editable = {true}
-          onChangeText={this.gToL}
-        />
-        <Text>gallons</Text>
-        
-        <Text>
-          {this.state.liter}
-        </Text>
-        
-        
+        <View>
+          <TextInput
+            style={styles.gallonInput}
+            editable = {true}
+            onChangeText={this.gToL}
+          />
 
+          <Text style={styles.liters}>
+            {this.state.liter} liters
+          </Text>
+        </View>
       </View>
     );
   }
@@ -49,17 +49,26 @@ class GallonToLiter extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    marginTop: 50,
+  directions: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    marginTop: 50
   },
+  gallonInput: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    textAlign: 'center'
+  },
+  liters: {
+    marginTop: 20,
+    fontSize: 20,
+    color: 'darkslateblue'
+  }
 });
 
 AppRegistry.registerComponent('GallonToLiter', () => GallonToLiter);
